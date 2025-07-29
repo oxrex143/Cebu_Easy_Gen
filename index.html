@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ops Code Generator</title>
+  <title>Cebu EasyGen Ops Code Generator</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
   <style>
     body {
@@ -122,14 +122,28 @@
       cursor: pointer;
       font-size: 16px;
     }
+    .logo-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .logo {
+      width: 100px;
+      height: 100px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 2px solid #4CAF50;
+    }
   </style>
 </head>
 <body>
   <!-- Welcome Popup -->
   <div id="welcome-popup">
     <div id="welcome-content">
+      <div class="logo-container">
+        <img src="https://i.imgur.com/Jc8qR9N.png" alt="Ops Code Generator Logo" class="logo">
+      </div>
       <h2>Ops Code Generator</h2>
-      <p>Welcome to the Ops Code Generator tool. Here's how to use it:</p>
+      <p>Welcome to Cebu Easy Gen Ops Code Generator tool. Here's how to use it:</p>
       <ul>
         <li>Enter the Ops Number in the first field (required)</li>
         <li>Optionally add a Custom Name in the second field</li>
@@ -137,7 +151,7 @@
         <li>Click "Download Ops Code" to save the image</li>
       </ul>
       <div id="credits">
-        Created by Jurex Aso
+        Created by Jurex Aso<br>
         Coordinator: Sir Migz
       </div>
       <button id="close-welcome">OK, I Understand</button>
@@ -198,7 +212,7 @@
         document.getElementById('qr-preview-container').classList.remove('hidden');
         document.getElementById('downloadBtn').disabled = false;
       } else {
-        alert('Please enter an Ops Number first');
+        alert('Please enter an OP Number first');
         document.getElementById('qr-preview-container').classList.add('hidden');
         document.getElementById('downloadBtn').disabled = true;
       }
@@ -210,7 +224,7 @@
       const customName = document.getElementById('customName').value.trim();
       
       if (!opNumber) {
-        alert('Please generate a Ops code first');
+        alert('Please generate a QR code first');
         return;
       }
       
@@ -230,7 +244,7 @@
       ctx.font = 'bold 18px Arial';
       ctx.textAlign = 'center';
       ctx.fillStyle = '#000000';
-      ctx.fillText('CEBU EASY GEN', tempCanvas.width/2, 30);
+      ctx.fillText('Op QR Code', tempCanvas.width/2, 30);
       
       // Draw the QR code in the middle (offset from top)
       const qrCanvas = document.getElementById('qr');
@@ -267,4 +281,4 @@
     });
   </script>
 </body>
-</html>
+        </html>
